@@ -1,4 +1,6 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.dd.comgradle'
+apply from: '../nexus_maven.gradle'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 26
@@ -6,7 +8,6 @@ android {
 
 
     defaultConfig {
-        applicationId "com.atu.secondmodule"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
@@ -23,9 +24,17 @@ android {
         }
     }
 
+    resourcePrefix "second_"
+
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':componentservice')
+    compile project(':componentservice')
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+}
+
+
+combuild {
+    applicationName = 'com.atu.second.runalone.application.SecondApplication'
+    isRegisterCompoAuto = true
 }

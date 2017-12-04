@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.dd.comgradle'
 
 android {
     compileSdkVersion 26
@@ -19,6 +19,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':componentservice')
+    compile project(':componentservice')
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+}
+
+combuild {
+    applicationName = 'com.atu.componentdemo.app.MainApplication'
+    isRegisterCompoAuto = true
 }

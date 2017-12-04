@@ -22,9 +22,10 @@ android {
         }
     }
 
+    resourcePrefix "common_"
+
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':baselib')
+    compile project(':baselib')
 }
