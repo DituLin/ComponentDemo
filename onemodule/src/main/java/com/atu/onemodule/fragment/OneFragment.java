@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.atu.baseres.BaseFragment;
 import com.atu.componentlib.router.ui.UIRouter;
 import com.atu.onemodule.R;
@@ -13,7 +14,7 @@ import com.atu.onemodule.R;
 /**
  * Created by atu on 2017/12/4.
  */
-
+@Route(path = "/one/one_fragment")
 public class OneFragment extends BaseFragment {
 
     private View rootView;
